@@ -10,8 +10,8 @@ import { ExpensesSummary } from "./ExpensesSummary";
 export const ExpensesOutput = ({ expenses, expensesPeriod }) => {
   return (
     <View style={styles.container}>
-      <ExpensesSummary expenses={MOCK_EXPENSES} periodName={expensesPeriod} />
-      <ExpensesList expenses={MOCK_EXPENSES} />
+      <ExpensesSummary expenses={expenses} periodName={expensesPeriod} />
+      <ExpensesList expenses={expenses} />
     </View>
   );
 };
