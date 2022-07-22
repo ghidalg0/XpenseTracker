@@ -1,5 +1,6 @@
 import { useContext, useLayoutEffect } from "react";
 import { StyleSheet, View } from "react-native";
+import { ExpenseForm } from "../components/ManageExpense/ExpenseForm";
 
 // Component
 import { Button } from "../components/UI/Button";
@@ -42,7 +43,7 @@ export const ManageExpense = ({ route, navigation }) => {
 
   return (
     <View style={styles.container}>
-
+      <ExpenseForm />
       <View style={styles.buttons}>
         <Button mode="flat" onPress={cancelHandler} style={styles.button}>Cancel</Button>
         <Button onPress={confirmHandler} style={styles.button}>{isEditing ? "Update" : "Add"}</Button>
