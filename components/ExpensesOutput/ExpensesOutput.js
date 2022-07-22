@@ -1,4 +1,7 @@
-import { View } from "react-native";
+import { View, StyleSheet } from "react-native";
+
+// Styling
+import { GlobalStyles } from "../../constants/styles";
 
 // Components
 import { ExpensesList } from "./ExpensesList";
@@ -39,9 +42,17 @@ const MOCK_EXPENSES = [
 
 export const ExpensesOutput = ({ expenses, expensesPeriod }) => {
   return (
-    <View>
+    <View style={styles.container}>
       <ExpensesSummary expenses={MOCK_EXPENSES} periodName={expensesPeriod} />
       <ExpensesList expenses={MOCK_EXPENSES} />
     </View>
   );
-}
+};
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    padding: 24,
+    backgroundColor: GlobalStyles.colors.primary700,
+  },
+});
