@@ -42,6 +42,7 @@ export const ManageExpense = ({ route, navigation }) => {
 
   return (
     <View style={styles.container}>
+
       <View style={styles.buttons}>
         <Button mode="flat" onPress={cancelHandler} style={styles.button}>Cancel</Button>
         <Button onPress={confirmHandler} style={styles.button}>{isEditing ? "Update" : "Add"}</Button>
