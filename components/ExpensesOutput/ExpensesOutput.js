@@ -41,7 +41,7 @@ export const ExpensesOutput = ({ expenses, expensesPeriod }) => {
   return (
     <View>
       <ExpensesSummary expenses={MOCK_EXPENSES} periodName={expensesPeriod} />
-      <ExpensesList />
+      <ExpensesList expenses={MOCK_EXPENSES} />
     </View>
   );
 }
