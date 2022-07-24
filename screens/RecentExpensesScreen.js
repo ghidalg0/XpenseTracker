@@ -11,7 +11,8 @@ export const RecentExpenses = () => {
 
   useEffect(() => {
     const getExpenses = async () => {
-      await fetchExpenses();
+      const expenses = await fetchExpenses();
+      expensesContext.setExpenses(expenses);
     };
 
     getExpenses();

@@ -16,8 +16,6 @@ export const fetchExpenses = async () => {
   );
   const expenses = [];
 
-  console.log(response.data);
-
   for (const key in response.data) {
     const expenseObj = {
       id: key,
@@ -25,7 +23,7 @@ export const fetchExpenses = async () => {
       date: new Date(response.data[key].date),
       description: response.data[key].description,
     };
-    expenseObj.push(expenseObj);
+    expenses.push(expenseObj);
   };
   return expenses;
 };
