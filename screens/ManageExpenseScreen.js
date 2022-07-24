@@ -8,6 +8,7 @@ import { IconButton } from "../components/UI/IconButton";
 // Styling
 import { GlobalStyles } from "../constants/styles";
 import { ExpensesContext } from "../store/expenses-context";
+import { storeExpense } from "../util/http";
 
 export const ManageExpense = ({ route, navigation }) => {
 
@@ -37,6 +38,7 @@ export const ManageExpense = ({ route, navigation }) => {
     if (isEditing) {
       expensesCtx.updateExpense(editedExpenseId, expenseData);
     } else {
+      storeExpense(expenseData);
       expensesCtx.addExpense(expenseData);
     }
     navigation.goBack();
