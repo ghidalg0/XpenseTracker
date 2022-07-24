@@ -3,7 +3,6 @@ import { StyleSheet, View } from "react-native";
 import { ExpenseForm } from "../components/ManageExpense/ExpenseForm";
 
 // Component
-import { Button } from "../components/UI/Button";
 import { IconButton } from "../components/UI/IconButton";
 
 // Styling
@@ -43,11 +42,8 @@ export const ManageExpense = ({ route, navigation }) => {
 
   return (
     <View style={styles.container}>
-      <ExpenseForm />
-      <View style={styles.buttons}>
-        <Button mode="flat" onPress={cancelHandler} style={styles.button}>Cancel</Button>
-        <Button onPress={confirmHandler} style={styles.button}>{isEditing ? "Update" : "Add"}</Button>
-      </View>
+      <ExpenseForm submitButtonLabel={isEditing ? "Update" : "Add"} onCancel={cancelHandler}/>
+
       {isEditing &&
         <View style={styles.deleteContainer}>
             <IconButton icon="trash" color={GlobalStyles.colors.error500} size={36} onPress={deleteExpenseHandler} />
@@ -63,15 +59,7 @@ const styles = StyleSheet.create({
     padding: 24,
     backgroundColor: GlobalStyles.colors.primary800,
   },
-  buttons: {
-    flexDirection: "row",
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  button: {
-    minWidth: 120,
-    marginHorizontal: 8,
-  },
+
   deleteContainer: {
     marginTop: 16,
     paddingTop: 8,
