@@ -8,6 +8,7 @@ export const storeExpense = async (expenseData) => {
     expenseData,
   );
   const id = response.data.name; // firebase "name" = id
+  return id;
 };
 
 
@@ -27,4 +28,17 @@ export const fetchExpenses = async () => {
     expenses.push(expenseObj);
   };
   return expenses;
+};
+
+export const updateExpense = (id, expenseData) => {
+  return axios.put(
+    BACKEND_URL + `expenses/${id}.json`,
+    expenseData,
+  );
+};
+
+export const deleteExpense = (id) => {
+  return axios.delete(
+    BACKEND_URL + `expenses/${id}.json`,
+  );
 };
