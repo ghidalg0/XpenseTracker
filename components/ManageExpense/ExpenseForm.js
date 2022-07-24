@@ -24,7 +24,7 @@ export const ExpenseForm = ({ submitButtonLabel, onCancel, onSubmit, defaultValu
 
   const submitHandler = () => {
     const expenseData = {
-      amount: parseInt(inputs.amount.value),
+      amount: +inputs.amount.value,
       date: new Date(inputs.date.value),
       description: inputs.description.value,
     };
