@@ -2,11 +2,12 @@ import axios from "axios";
 
 const BACKEND_URL = 'https://xpensetracker-94ce7-default-rtdb.europe-west1.firebasedatabase.app/';
 
-export const storeExpense = (expenseData) => {
-  axios.post(
+export const storeExpense = async (expenseData) => {
+  const response = await axios.post(
     BACKEND_URL + 'expenses.json',
     expenseData,
   );
+  const id = response.data.name; // firebase "name" = id
 };
 
 
